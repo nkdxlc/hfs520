@@ -1,5 +1,70 @@
-#main-content {
-  font-size: 36px;
-  font-weight: bold;
-  padding: 16px;
+body {
+  background: linear-gradient(
+    to bottom,
+    #b7a599 0%,
+    #a18c91 50%,
+    #6f7b86 100%
+  );
+  background-attachment: fixed;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  text-align: center;
+  color: #fff;
+}
+
+.headline {
+  font-size: 7.5vh;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  color: inherit;
+  
+  strong {
+    font-weight: 700;
+  }
+}
+
+/**
+ * CSS for responsive heart shape.
+ * Basically it consists of two circles and a square.
+ */
+.heart-shape {
+  position: relative;
+  
+  display: inline-block;  
+  width: 25vh;
+  height: 25vh;
+  transform: rotate(45deg);
+  
+  margin-bottom: 6vh;
+  
+  background-color: currentColor;
+  
+  &:before, &:after {
+    content: '';
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+
+  &:before{
+    bottom: 0;
+    left: -50%;
+  }
+  
+  &:after{
+    top: -50%;
+    right: 0;
+  }
 }
