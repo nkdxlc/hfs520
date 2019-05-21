@@ -48,7 +48,7 @@ body {
   background-color: currentColor;
   
   &:before, &:after {
-    content: '';
+    content: '520';
     
     position: absolute;
     width: 100%;
