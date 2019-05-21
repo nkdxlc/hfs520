@@ -1,70 +1,69 @@
-body {
-  background: linear-gradient(
-    to bottom,
-    #b7a599 0%,
-    #a18c91 50%,
-    #6f7b86 100%
-  );
-  background-attachment: fixed;
+html, body {
+  background-color: #F1F1F1;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
 }
 
-.wrap {
+.wrapper {
+  background-color: #FFF;
+  border-radius: 2px;
+  box-shadow: 0px 2px 1px 0px #DDD;
+  box-sizing: border-box;
+  height: 300px;
+  left: 50%;
+  margin: -150px 0 0 -150px;
   position: absolute;
   top: 50%;
+  width: 300px;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height: 50px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  
-  text-align: center;
-  color: #fff;
-}
-
-.headline {
-  font-size: 7.5vh;
-  font-weight: 300;
-  text-transform: uppercase;
-  text-align: center;
-  white-space: nowrap;
-  color: inherit;
-  
-  strong {
-    font-weight: 700;
-  }
-}
-
-/**
- * CSS for responsive heart shape.
- * Basically it consists of two circles and a square.
- */
-.heart-shape {
+  margin: -25px 0 0 -100px;
+  padding: 10px 0px;
   position: relative;
-  
-  display: inline-block;  
-  width: 25vh;
-  height: 25vh;
-  transform: rotate(45deg);
-  
-  margin-bottom: 6vh;
-  
-  background-color: currentColor;
-  
-  &:before, &:after {
-    content: '520';
-    
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    
-    border-radius: 50%;
-    background-color: currentColor;
-  }
+  top: 50%;
+  width: 200px;
 
-  &:before{
-    bottom: 0;
-    left: -50%;
+  &:focus {
+    outline: none;    
   }
-  
-  &:after{
-    top: -50%;
-    right: 0;
-  }
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: dodgerblue;
+}
+
+.input:focus+.underline {
+  transform: scale(1);
+}
+
+.underline {
+  background-color: dodgerblue;
+  display: inline-block;
+  height: 2px;
+  left: 50px;
+  margin-top: -4px;
+  position: absolute;
+  top: 185px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  width: 202px;
 }
