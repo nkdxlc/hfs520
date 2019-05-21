@@ -1,44 +1,57 @@
-const mainwrap = document.querySelector(".main-wrap");
-const openSearch = document.querySelector("#search-icon");
-const closeSearch = document.querySelector("#search-close");
-const formContainer = document.querySelector("#main-search-form");
-const searchContainer = document.querySelector("#search-container")
-const searchInput = document.querySelector(".search-input");
-const welcomeMessage = document.querySelector("#welcome");
+$(document).ready(function() {
+  $("#email").on("focus keyup", function() {
+    var $email_val = $("#email").val();
+    if ($email_val !== "") {
+      $(".float-btn").addClass("active-btn");
+    
+      if (emailValidation(document.getElementById('email').value)) {
+        $(".float-btn").addClass("active-btn-final");
+        $("#float-btn").prop("disabled", false);
+        $("#email").on("keypress", function(e) {
+          if (e.which === 13) {
+            $("#float-btn").trigger("click");
+          }
+        });
+      } else {
+        $(".float-btn").removeClass("active-btn-final"); 
+        $("#float-btn").prop("disabled", true);
+      }
+    }
+    else {
+      $(this).parent().find("button").removeClass("active-btn");
+    }
+    
+    $("input").each(function () {
+        if($(this).val() === "") {
+          $(this).parent().removeClass("is-active");
+        } else {
+          $(this).parent().addClass("is-active");
+        }
+    });
+    
+  }) 
+});
 
+$("input").on("focus", function() {
+	$(this).parent().addClass("is-focused");
+});
 
-
-function init()
-{
-  welcomeMessage.classList.add("show-search");
-  initEvents();
+function emailValidation(email) {
+  var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  return re.test(email);
 }
 
-function open()
-{
-  mainwrap.classList.add("move");
-  formContainer.classList.add("show-search");
-  searchContainer.classList.remove("opacity-off");
-  searchInput.focus();
+$("#float-btn").click(function() {
+  console.log($(this));
+  var $this = $(this);
+  $(this).html("").addClass('button-loading');
+  if(document.getElementById('email').value === '623990373@qq.com'){
+	$this.removeClass('button-loading').addClass("full-btn").text("Hi, my princess");
+}else{
+	$this.removeClass('button-loading').addClass("full-btn").text("WRONG");
 }
-
-function close()
-{
-  mainwrap.classList.remove("move");
-  formContainer.classList.remove("show-search");
-  searchContainer.classList.add("opacity-off");
-}
-
-function initEvents()
-{
-  openSearch.addEventListener('click', open);
-  closeSearch.addEventListener('click', close);
-  document.addEventListener('keyup', function(ev) {
-			if( ev.keyCode == 27 ) {
-				close();
-			}
-	});
-}
-
-
-init();
+  setTimeout(function() {
+    $this.removeClass("full-btn active-btn active-btn-final").html("Verify");
+    $("#email").val("").focus()
+  },2000);
+})
