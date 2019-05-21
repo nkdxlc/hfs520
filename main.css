@@ -1,70 +1,172 @@
+html,
+body,
+.container {
+  height: 100%;
+}
+
 body {
-  background: linear-gradient(
-    to bottom,
-    #b7a599 0%,
-    #a18c91 50%,
-    #6f7b86 100%
-  );
-  background-attachment: fixed;
+  background: #2196F3;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
 }
 
-.wrap {
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+input {
+  padding: 15px;
+  min-width: 450px;
+  outline: none;
+  border: 1px solid #2196F3;
+  border-radius: 5px;
+  font-size: 13px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus + label {
+  opacity: 1;
+}
+
+.float-btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  text-align: center;
-  color: #fff;
-}
-
-.headline {
-  font-size: 7.5vh;
-  font-weight: 300;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #084e6d;
+  border: none;
+  width: 100px;
+  margin-left: -5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #FFF;
+  font-size: 15px;
   text-transform: uppercase;
-  text-align: center;
-  white-space: nowrap;
-  color: inherit;
-  
-  strong {
-    font-weight: 700;
-  }
+  outline: none;
+  opacity: 0;
 }
 
-/**
- * CSS for responsive heart shape.
- * Basically it consists of two circles and a square.
- */
-.heart-shape {
-  position: relative;
-  
-  display: inline-block;  
-  width: 25vh;
-  height: 25vh;
-  transform: rotate(45deg);
-  
-  margin-bottom: 6vh;
-  
-  background-color: currentColor;
-  
-  &:before, &:after {
-    content: '';
-    
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    
-    border-radius: 50%;
-    background-color: currentColor;
-  }
+label {
+  opacity: 0;
+}
 
-  &:before{
-    bottom: 0;
-    left: -50%;
+input + label {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #9e9e9e;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.is-focused input {
+  border-color: #298eea;
+}
+
+.is-active input {
+  padding: 25px 15px 5px !important;
+}
+
+.is-active input + label {
+  visibility: visible;
+  opacity: 1;
+}
+
+.is-focused.is-active input + label {
+  color: #607D8B;
+}
+
+.dynamic-label {
+  position: relative;
+}
+
+.active-btn {
+  position: absolute;
+  right: 0;
+  opacity: 0.3;
+  cursor: not-allowed;
+  transition: opacity .3s ease, background .3s ease;
+}
+
+.active-btn-final {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity .3s ease, background .3s ease;;
+}
+
+.active-btn-final:hover {
+  background: #0c3d52;
+}
+
+.full-btn {
+  width: 100%;
+  border-radius: 5px;
+  transition: width .3s ease, opacity .3s ease;
+}
+
+.button-loading {
+  cursor: wait;
+}
+.button-loading:before {
+  margin: -13px 0 0 -13px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: '';
+  -webkit-border-radius: 24px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 24px;
+  -moz-background-clip: padding;
+  border-radius: 24px;
+  background-clip: padding-box;
+  border: rgba(255, 255, 255, 0.25) 2px solid;
+  border-top-color: #fff;
+  -webkit-animation: animation-rotate 750ms linear infinite;
+  -moz-animation: animation-rotate 750ms linear infinite;
+  -o-animation: animation-rotate 750ms linear infinite;
+  animation: animation-rotate 750ms linear infinite;
+}
+
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
   }
-  
-  &:after{
-    top: -50%;
-    right: 0;
+}
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
   }
 }
