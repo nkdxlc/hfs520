@@ -57,6 +57,7 @@
 		</div>
 	</div>
 	<!-- <audio src="./love.ogg" id="music" autoplay="autoplay"></audio> -->
+	<audio src="./love.ogg" id="music"></audio>
 	<iframe allow="autoplay" id="ifm" style="display:none" src="./blank.ogg"></iframe>
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
@@ -68,6 +69,7 @@
 		together.setSeconds(0);
 		together.setMilliseconds(0);
 		var ifm = document.getElementById("ifm");
+	    var vdo = document.getElementById("music");
 		ifm.onload = function(){
 			vdo.src = './love.ogg';
 			vdo.oncanplay = function(){
