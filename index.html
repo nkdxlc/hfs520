@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Our Love Story</title>
+	<title>HFS 520</title>
 	<style type="text/css">
 		@font-face {
 			font-family: digit;
@@ -19,7 +19,7 @@
 	<div id="mainDiv">
 		<div id="content" style="width: 1110px; height: 625px; margin-top: 27.5px; margin-left: 83px;">
 			<div id="code" style="margin-top: 112.5px;">
-				<span class="comments">我的蛇蝎美人</span><br>
+				<span class="comments">我的'蛇蝎美人'</span><br>
 				<span class="space comments">我会牵着你的手，走到我们满头白发的那一天，</span><br>
 				<span class="space comments">我会守护你生命里的精彩，并陪伴你一路精彩下去。<br>
 				<span class="space comments">你的幸福快乐，是我一生的追求。<br>
@@ -56,26 +56,17 @@
 			</div>
 		</div>
 	</div>
-	<!-- <audio src="./love.ogg" id="music" autoplay="autoplay"></audio> -->
-	<audio src="./love.ogg" id="music"></audio>
-	<iframe allow="autoplay" id="ifm" style="display:none" src="./blank.ogg"></iframe>
+	<audio src="./love.ogg" id="music" autoplay="autoplay"></audio>
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
-		var offsetY = $("#loveHeart").height() / 2 - 45;
+		var offsetY = $("#loveHeart").height() / 2 - 35;
 		var together = new Date();
 		together.setFullYear(2019, 3, 14);
 		together.setHours(18);
 		together.setMinutes(51);
 		together.setSeconds(0);
 		together.setMilliseconds(0);
-		var ifm = document.getElementById("ifm");
-	    var vdo = document.getElementById("music");
-		ifm.onload = function(){
-			vdo.src = './love.ogg';
-			vdo.oncanplay = function(){
-				vdo.play();
-			};
-		};
+		
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
