@@ -20,13 +20,13 @@
 		<div id="content" style="width: 1110px; height: 625px; margin-top: 27.5px; margin-left: 83px;">
 			<div id="code" style="margin-top: 112.5px;">
 				<span class="comments">我的蛇蝎美人</span><br>
-				<span class="space comments">我会牵着你的手，走到我们满头白发的那一天</span><br>
+				<span class="space comments">我会牵着你的手，走到我们满头白发的那一天，</span><br>
 				<span class="space comments">我会守护你生命里的精彩，并陪伴你一路精彩下去。<br>
 				<span class="space comments">你的幸福快乐，是我一生的追求。<br>
 				<span class="space comments">我会每一天带着笑脸，和你说早安，<br>
 				<span class="space comments">我会每一晚与你道声晚安再入梦乡，<br>
 				<span class="space comments">我会带你去所有你想去的地方，<br>
-				<span class="space comments">陪你闹看你笑<br>
+				<span class="space comments">陪你闹看你笑，<br>
 				<span class="space comments">历经你生命中所有的点点滴滴。<br>
 				<span class="space comments">我期待这一生与你一起走过，<br>
 				<span class="space comments">走到尽头再回头看尽一生铅华满地，<br>
@@ -56,6 +56,7 @@
 			</div>
 		</div>
 	</div>
+	<audio muted src="./love.ogg" id="music" autoplay="autoplay"></audio>
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 45;
@@ -65,6 +66,16 @@
 		together.setMinutes(51);
 		together.setSeconds(0);
 		together.setMilliseconds(0);
+		function toggleSound() {
+			var music = document.getElementById("music");//获取ID  
+			console.log(music);
+			console.log(music.paused);
+			if (music.paused) { //判读是否播放  
+			music.paused=false;
+		    music.play(); //没有就播放 
+		}  
+}
+		setInterval("toggleSound()",1);
 
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
@@ -90,5 +101,4 @@
 		}
 	</script>
 </body>
-<iframe src="./love.ogg" allow="autoplay" style="display:none" id="music"></iframe>
 </html>
