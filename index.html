@@ -1,80 +1,93 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HFS520</title>
- 
-    <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
- 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-  
- 
-    <div class="container">
-  <div class="row clearfix">
-    <div class="col-md-12 column">
-      <div class="row clearfix">
-    
- 
-            <h1 align="center">HFS520</h1>
-          <div class="form-horizontal" role="form" align="center">
- 
-            <div class="form-group">
-               <label for="input" class="control-label" >PLEASE ENTER THE SECRET</label>
-              <br>
-                <input  class="form-control" id="input" placeholder="球衣的号码是" />
-      
-            </div>
-           
-            <div class="form-group">
-              <button align="center" type="submit" onclick="check()" class="btn btn-block btn-primary btn-lg ">ENTER</button>
-              
-            </div>
- 
- 
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  </div>
-</div>
-    <script language="javascript">
-      function check(){
-        var value = document.getElementById("input").value; 
-         
-        if(value=="36"){
-          window.location.href="formyprincess.html";
-           return true;
-          
-        } 
-         else{
-          alert("secret is false");
-          return false;
-         }
-       
-      }
-       
-    document.onkeydown=keyListener;
-    function keyListener(e){
-      // 当按下回车键，执行我们的代码
-    if(e.keyCode == 13){
-      check();
-    }
-}
-    </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="bootstrap/js/jquery-1.11.3.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-  </body>
+<!-- saved from url=(0031)http://www.albee.me/index3.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Our Love Story</title>
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('./Digital-7Mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="./default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="./jquery.js"></script><style type="text/css" abt="234"></style>
+	<script type="text/javascript" src="./garden.js"></script>
+  <script type="text/javascript" src="./functions.js"></script>
+</head>
+<body>
+	<div id="mainDiv">
+		<div id="content" style="width: 1110px; height: 625px; margin-top: 27.5px; margin-left: 83px;">
+			<div id="code" style="margin-top: 112.5px;">
+				<span class="comments">我的爱人</span><br>
+				<span class="space comments">我会牵着你的手，走到我们满头白发的那一天</span><br>
+				<span class="space comments">我会守护你生命里的精彩，并陪伴你一路精彩下去。<br>
+				<span class="space comments">你的幸福快乐，是我一生的追求。<br>
+				<span class="space comments">我会每一天带着笑脸，和你说早安，<br>
+				<span class="space comments">我会每一晚与你道声晚安再入梦乡，<br>
+				<span class="space comments">我会带你去所有你想去的地方，<br>
+				<span class="space comments">陪你闹看你笑<br>
+				<span class="space comments">历经你生命中所有的点点滴滴。<br>
+				<span class="space comments">我期待这一生与你一起走过，<br>
+				<span class="space comments">走到尽头再回头看尽一生铅华满地，<br>
+				<span class="space comments">我期待与你慢慢变老，<br>
+				<span class="space comments">等我们老到哪儿也去不了，<br>
+				<span class="space comments">还能满载着一生的幸福快乐。<br>
+				<span class="space comments">我愿意爱你直到老去，<br>
+				<span class="space comments">我会为我们的未来撑起一片天空，<br>
+				<span class="space comments">为我们的将来担负起一生的责任，<br>
+				<span class="space comments">愿意为你去做每一件能让你开心快乐的事。<br>
+				<span class="space comments">所有我们经历的点点滴滴，<br>都是我们一辈子最美的回忆。</span> <br>
+				<br>
+			</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>_</div>
+			<div id="loveHeart">
+				<canvas id="garden" width="670" height="625"></canvas>
+				<div id="words" style="position: absolute; top: 222.5px; left: 593px;">
+					<div id="messages" style="display: block;">
+						我爱你！
+						<div id="elapseClock"><span class="digit">181</span> days <span class="digit">16</span> hours <span class="digit">53</span> minutes <span class="digit">23</span> seconds</div>
+					</div>
+					<div id="loveu" style="display: block;">
+						Love u forever and ever.<br>
+						<div class="signature"> - LC</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<audio src="./love.mp3" id="music" autoplay="autoplay"></audio>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 3, 14);
+		together.setHours(18);
+		together.setMinutes(51);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
 </html>
