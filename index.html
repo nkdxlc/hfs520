@@ -56,7 +56,8 @@
 			</div>
 		</div>
 	</div>
-	<audio src="./love.ogg" id="music" autoplay="autoplay"></audio>
+	<!-- <audio src="./love.ogg" id="music" autoplay="autoplay"></audio> -->
+	<iframe allow="autoplay" style="display:none" src="./blank.ogg"></iframe>
 	<script type="text/javascript">
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 45;
@@ -66,17 +67,12 @@
 		together.setMinutes(51);
 		together.setSeconds(0);
 		together.setMilliseconds(0);
-		function toggleSound() {
-			var music = document.getElementById("music");//获取ID  
-			console.log(music);
-			console.log(music.paused);
-			if (music.paused) { //判读是否播放  
-			music.paused=false;
-		    music.play(); //没有就播放 
-		}  
-}
-		setInterval("toggleSound()",1);
-
+		ifm.onload = function(){
+			vdo.src = './love.ogg';
+			vdo.oncanplay = function(){
+				vdo.play();
+			};
+		};
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
