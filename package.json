@@ -4,7 +4,7 @@
   "description": "This project for my honey, in the valentine's day, Feb 14th, 2016",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
   },
   "edp": {
     "wwwroot": "/",
